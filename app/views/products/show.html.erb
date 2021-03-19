@@ -1,0 +1,16 @@
+<h1><%= @product.name %></h1>
+<h3><%= @product.country_of_origin %></h3>
+<h3><%= @product.cost %>
+
+<% if @product.reviews.any? %>
+  <h4>Customer Reviews:</h4>
+  <% @orduct.reviews.each do |title| %>
+    <ul>
+      <li>
+        <%= link_to review.title, product_review_path(@product, review) %>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>There are currently no reviews for this product. Please check back later.</p>
+<% end %>
