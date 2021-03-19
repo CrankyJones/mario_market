@@ -1,0 +1,18 @@
+<%= render "layouts/errors", :object => @review %>
+
+
+<%if @review.id %>
+  <p><%= link_to "Delete Review", review_path(@review),
+                        :data => {:confirm => "Are you sure?",
+                                       :method => "delete"} %></p>
+  <% end %>
+
+<%= form_for @review do |f| %>
+  <%= f.label :author, 'Enter your name:' %>
+  <%= f.text_field :author, required: true %>
+  <%= f.label :content_body, 'Enter your review (Must be between 50 & 250 characters):' %>
+  <%= f.text_area :content_body, required: true %>
+  <%= f.label :rating, 'Enter a rating for the product (1 to 5, 5 being the highest):'%>
+  <%= f.number_field :rating, required: true %>%
+  <%= f.submit %>
+<% end %>
