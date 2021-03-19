@@ -3,3 +3,6 @@
 <h2><%= @product.name %></h2>
 
 <%= render "layouts/product_form", :object => @product %>
+
+<%= link_to 'Back to the product.', product_path(@product) %><br>
+<%= link_to 'Back to our product catalogue.', products_path %><br>

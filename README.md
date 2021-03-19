@@ -1,24 +1,53 @@
-# README
+# Mario's Market
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### A project that tracks store products and associated reviews.
 
-Things you may want to cover:
+#### By Geof Rosenmund
 
-* Ruby version
+## Technologies Used
 
-* System dependencies
+* Ruby
+* Rails
+* RSPEC
+* Pry 
+* Capybara
+* PostgreSQL
+* Faker
 
-* Configuration
 
-* Database creation
+## Description
+This project uses a created database to store and link tables(shown below). A user can create new products and add reviews to those projects. Products and reviews can be edited and deleted. Clicking on a product link in a list will navigate to a page that shows all current reviews. Products can also be edited from this page. Clicking on a review navigates you to a page where you can edit or delete that review. All of the products are listed alphabetically.
 
-* Database initialization
 
-* How to run the test suite
+## Setup/Installation Requirements
 
-* Services (job queues, cache servers, search engines, etc.)
+Follow the subsequent instructions to work from Git Hub:
 
-* Deployment instructions
+* Clone repository from Github
+* Navigate to the top level of the project directory
+* To create the Gemfile.lock: $ bundle install
+* In order to recreate the databases, enter the following command in your terminal:
+  * $ rake db:setup
+* To create a local server and run the project: $ rails s
+* In your browser, navigate to localhost:3000
+* To run any testing: $ rspec
 
-* ...
+## Git Hub link:
+
+https://github.com/CrankyJones/mario_market
+
+## Database Layout:
+
+![Database Layout](/product_schema.PNG)
+
+## Known Bugs:
+
+* No known bugs at this time.
+
+
+## **License**
+[MIT](https://opensource.org/licenses/MIT)
+Copyright (c) [2021] [Geof Rosenmund]
+
+## **Contact Information**
+Geof Rosenmund (geof.rosenmunds.email@gmail.com)
