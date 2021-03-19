@@ -3,8 +3,9 @@
 <h3>Click on one for more details.</h3>
 
 <% if @products.any? %>
+<% products = @products.sort_by { |k| k[:name] } %>
   <ul>
-    <% @products.each do |product| %>
+    <% products.each do |product| %>
       <li><%= link_to product.name, product_path(product) %></li>
     <% end %>
   </ul>

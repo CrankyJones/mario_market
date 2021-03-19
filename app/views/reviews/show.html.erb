@@ -4,4 +4,6 @@
 <p><%= @review.content_body %></p>
 
 
-<%= link_to 'Editor or Delete Review', edit_product_review_path(@product, @review) %>
+<%= link_to 'Edit or Delete Review', edit_product_review_path(@product, @review) %><br>
+<%= link_to 'Back to the product.', product_path(@product) %><br>
+<%= link_to 'Back to our product catalogue.', products_path %><br>
