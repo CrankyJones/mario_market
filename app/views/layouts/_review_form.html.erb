@@ -7,14 +7,14 @@
                                        :method => "delete"} %></p>
   <% end %>
 
-<%= form_for @review do |f| %>
+<%= form_for [@product, @review] do |f| %>
   <%= f.label :author, 'Enter your name:' %>
-  <%= f.text_field :author, required: true %>
+  <%= f.text_field :author, required: true %><br>
   <%= f.label :title, 'Enter a title for your review:' %>
-  <%= f.text_field :title, required: true %>
+  <%= f.text_field :title, required: true %><br>
   <%= f.label :content_body, 'Enter your review (Must be between 50 & 250 characters):' %>
-  <%= f.text_area :content_body, required: true %>
+  <%= f.text_area :content_body, required: true %><br>
   <%= f.label :rating, 'Enter a rating for the product (1 to 5, 5 being the highest):'%>
-  <%= f.number_field :rating, required: true %>%
+  <%= f.number_field :rating, required: true %><br>
   <%= f.submit %>
 <% end %>

@@ -1,0 +1,7 @@
+<h1> <%= @review.title %></h1>
+<h4> By: <%= @review.author %></h4>
+<h6> Rating: <%=@review.rating %> star(s)</h6>
+<p><%= @review.content_body %></p>
+
+
+<%= link_to 'Editor or Delete Review', edit_product_review_path(@product, @review) %>

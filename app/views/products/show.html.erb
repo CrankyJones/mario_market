@@ -4,10 +4,10 @@
 
 <% if @product.reviews.any? %>
   <h4>Customer Reviews:</h4>
-  <% @orduct.reviews.each do |title| %>
+  <% @product.reviews.each do |review| %>
     <ul>
       <li>
-        <%= link_to review.title, product_review_path(@product, review) %>
+        <%= link_to review.title, product_review_path(@product.id, review.id) %>
       </li>
     </ul>
   <% end %>
