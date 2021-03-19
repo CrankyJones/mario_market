@@ -2,7 +2,7 @@
 
 
 <%if @review.id %>
-  <p><%= link_to "Delete Review", review_path(@review),
+  <p><%= link_to "Delete Review", product_review_path(@product, @review),
                         :data => {:confirm => "Are you sure?",
                                        :method => "delete"} %></p>
   <% end %>
@@ -10,6 +10,8 @@
 <%= form_for @review do |f| %>
   <%= f.label :author, 'Enter your name:' %>
   <%= f.text_field :author, required: true %>
+  <%= f.label :title, 'Enter a title for your review:' %>
+  <%= f.text_field :title, required: true %>
   <%= f.label :content_body, 'Enter your review (Must be between 50 & 250 characters):' %>
   <%= f.text_area :content_body, required: true %>
   <%= f.label :rating, 'Enter a rating for the product (1 to 5, 5 being the highest):'%>

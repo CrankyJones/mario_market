@@ -14,3 +14,5 @@
 <% else %>
   <p>There are currently no reviews for this product. Please check back later.</p>
 <% end %>
+
+<%= link_to "Add a review for this product", new_product_review_path(@product.id) %>
