@@ -42,7 +42,7 @@ https://github.com/CrankyJones/mario_market
 
 ## Known Bugs:
 
-* No known bugs at this time.
+* Currently not able to link to the styles.css.
 
 
 ## **License**

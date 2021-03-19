@@ -15,8 +15,7 @@
   <% end %>
 <% else %>
   <p>There are currently no reviews for this product. Please check back later.</p>
-<% end %>
+<% end %><br>
 
-<%= link_to "Add a review for this product", new_product_review_path(@product.id) %><br>
-<%= link_to "Edit or delete product", edit_product_path(@product)%><br>
-<%= link_to 'Back to our product catalogue.', products_path %><br>
+<%= button_to "Add a review for this product", new_product_review_path(@product.id), :method => "get", class: 'btn btn-primary' %><br>
+<%= button_to 'Back to our product catalogue.', products_path, :method => "get", class: 'btn btn-danger'  %><br>

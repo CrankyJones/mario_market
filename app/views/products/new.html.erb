@@ -2,4 +2,4 @@
 
 <%= render "layouts/product_form", :object => @product %>
 
-<%= link_to 'Back to our product catalogue.', products_path %><br>
+<br><%= button_to 'Back to our product catalogue.', products_path, :method => "get", class: 'btn btn-danger'  %><br>

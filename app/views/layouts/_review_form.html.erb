@@ -9,15 +9,15 @@
 
 <%= form_for [@product, @review] do |f| %>
   <%= f.label :author, 'Enter your name:' %>
-  <%= f.text_field :author, required: true %><br>
+  <%= f.text_field :author, class: 'form-control', required: true %><br>
   <%= f.label :title, 'Enter a title for your review:' %>
-  <%= f.text_field :title, required: true %><br>
+  <%= f.text_field :title, class: 'form-control', required: true %><br>
   <%= f.label :content_body, 'Enter your review (Must be between 50 & 250 characters):' %>
-  <%= f.text_area :content_body, required: true %><br>
+  <%= f.text_area :content_body, class: 'form-control', required: true %><br>
   <%= f.label :rating, 'Enter a rating for the product (1 to 5, 5 being the highest):'%>
-  <%= f.number_field :rating, required: true %><br>
-  <%= f.submit %>
-<% end %>
+  <%= f.number_field :rating, class: 'form-control', required: true %><br>
+  <%= f.submit class: 'btn btn-primary' %><br>
+<% end %><br>
 
-<%= link_to 'Back to the product.', product_path(@product) %><br>
-<%= link_to 'Back to our product catalogue.', products_path %><br>
+<%= button_to 'Back to the product.', product_path(@product), :method => "get", class: 'btn btn-success' %><br>
+<%= button_to 'Back to our product catalogue.', products_path, :method => "get", class: 'btn btn-danger'  %><br>
