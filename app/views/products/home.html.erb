@@ -6,6 +6,10 @@
 <% reviews = Review.recent_reviews %>
 <ol>
   <% reviews.each do |review|%>
-    <li><%= link_to review.title, product_review_path(product.id, review.id) %></li>
+    <li>
+    <% product= Product.find((review.product_id).to_i) %>
+    <p><%= product.name %><br>
+    - <%= link_to review.title, product_review_path(review.product_id, review.id) %>
+    </li>
   <% end %>
 </ol>
