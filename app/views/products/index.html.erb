@@ -2,6 +2,10 @@
 <h2>Here is a current list of products available at Mario's.</h2>
 <h3>Click on one for more details.</h3><br>
 
+<% if current_user&.admin %>
+<%= button_to "Add a new product", new_product_path, :method => "get", class: "btn btn-primary" %><br>
+<% end %>
+
 <% if @products.any? %>
 <% products = @products.sort_by { |k| k[:name] } %>
   <div class="row row-cols-1 row-cols-md-3">
@@ -21,7 +25,3 @@
   <p>There are no products yet.</p>
 <% end %>
 
-
-<% if current_user&.admin %>
-<%= button_to "Add a new product", new_product_path, :method => "get", class: "btn btn-primary" %><br>
-<% end %>
