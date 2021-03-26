@@ -1,7 +1,9 @@
 class ReviewsController < ApplicationController
   before_action only: %i[ edit ] do
-    flash[:notice] = "You must be an admin to visit that page."
-    redirect_to new_user_session_path unless current_user&.admin
+    if !current_user.admin
+      flash[:notice] = "You must be an admin to visit that page."
+      redirect_to new_user_session_path unless current_user&.admin
+    end
   end
   
   before_action only: %i[ new ] do
