@@ -1,18 +1,24 @@
 
 <h2>Here is a current list of products available at Mario's.</h2>
-<h3>Click on one for more details.</h3>
+<h3>Click on one for more details.</h3><br>
 
 <% if @products.any? %>
 <% products = @products.sort_by { |k| k[:name] } %>
-    <div class="card-columns">
+  <div class="row row-cols-1 row-cols-md-3">
     <% products.each do |product| %>
-      <div class="card">
-      <div class="card-block">
-        <div class="card-title"><%= link_to product.name, product_path(product) %></div>
-      </div>
-    </div>
+      <a href='/products/<%= "#{product.id}"%>'>
+        <div class="col-md-2">
+          <div class="card h-100">
+            <div class="card-body">
+              <p class="card-title"> <%= product.name %></p>
+              <p class="card-text">Price: $<%= product.cost %></p>
+            </div>
+          </div>
+        </div>
+      </a>
     <% end %>
   </div>
+
 <% else %>
   <p>There are no products yet.</p>
 <% end %>
