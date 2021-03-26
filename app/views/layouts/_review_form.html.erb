@@ -15,7 +15,7 @@
   <%= f.text_area :content_body, class: 'form-control', required: true %><br>
   <%= f.label :rating, 'Enter a rating for the product (1 to 5, 5 being the highest):'%>
   <%= f.number_field :rating, class: 'form-control', required: true %><br>
-  <%= f.submit class: 'btn btn-primary' %><br>
+  <%= f.submit class: 'btn btn-light' %><br>
 <% end %><br>
 
-<%= button_to 'Back to the product.', product_path(@product), :method => "get", class: 'btn btn-success' %><br>
+<%= button_to 'Back to the product.', product_path(@product), :method => "get", class: 'btn btn-light' %><br>

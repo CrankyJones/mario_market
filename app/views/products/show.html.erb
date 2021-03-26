@@ -22,6 +22,6 @@
 <% end %><br>
 
 <% if current_user&.admin %>
-<%= button_to "Edit or delete product", edit_product_path(@product.id), :method => "get", class: 'btn btn-success' %><br>
+<%= button_to "Edit or delete product", edit_product_path(@product.id), :method => "get", class: 'btn btn-secondary' %><br>
 <% end %>
-<%= button_to "Add a review for this product", new_product_review_path(@product.id), :method => "get", class: 'btn btn-primary' %><br>
+<%= button_to "Add a review for this product", new_product_review_path(@product.id), :method => "get", class: 'btn btn-secondary' %><br>

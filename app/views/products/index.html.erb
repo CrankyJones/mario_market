@@ -4,7 +4,7 @@
 </div>
 
 <% if current_user&.admin %>
-<%= button_to "Add a new product", new_product_path, :method => "get", class: "btn btn-primary" %><br>
+<%= button_to "Add a new product", new_product_path, :method => "get", class: "btn btn-danger" %><br>
 <% end %>
 
 <% if @products.any? %>
