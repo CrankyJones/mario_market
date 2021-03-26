@@ -1,4 +1,11 @@
 <h1> Welcome to Mario's Mega-Mart!</h1>
 <h3> Est. 1983 / Family-Owned and Operated</h3>
 
+<h3>Newest reviews!<h3>
 
+<% reviews = Review.recent_reviews %>
+<ol>
+  <% reviews.each do |review|%>
+    <li><%= link_to review.title, product_review_path(product.id, review.id) %></li>
+  <% end %>
+</ol>

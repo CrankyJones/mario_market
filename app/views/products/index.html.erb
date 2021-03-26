@@ -8,12 +8,10 @@
     <% products.each do |product| %>
       <a href='/products/<%= "#{product.id}"%>'>
         <div class="col-md-2">
-          <div class="card h-100">
             <div class="card-body">
               <p class="card-title"> <%= product.name %></p>
               <p class="card-text">Price: $<%= product.cost %></p>
             </div>
-          </div>
         </div>
       </a>
     <% end %>
