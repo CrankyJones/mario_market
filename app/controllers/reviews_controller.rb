@@ -1,4 +1,8 @@
 class ReviewsController < ApplicationController
+  before_action only: %i[ new edit ] do
+    flash[:notice] = "Please sign in to leave a review."
+    redirect_to new_user_session_path unless current_user&.admin
+  end
   
   def new
     @product = Product.find(params[:product_id])

@@ -13,6 +13,8 @@
   <p>There are no products yet.</p>
 <% end %>
 
-<% if current_user&.current_user.admin %>
+<% if user_signed_in?  %>
+<% if current_user&.admin %>
 <%= button_to "Add a new product", new_product_path, :method => "get", class: "btn btn-primary" %><br>
-<% end %%>
+<% end %>
+<% end %>
