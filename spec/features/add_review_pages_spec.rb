@@ -1,6 +1,25 @@
 require 'rails_helper'
 
 describe "the add a review process" do
+
+  before :each do
+    # normal user
+    User.create(
+      username: 'User',
+      email: 'user@test.com',
+      password: '1234',
+      password_confirmation: '12345678'
+    )
+    # admin
+    User.create(
+      username: 'adminUser',
+      email: 'adminjoe@test.com',
+      password: '12345678',
+      password_confirmation: '12345678',
+      admin: true
+    )
+  end
+
   it "adds a new review" do
     visit root_path
     click_link 'Head to our product catalogue.'

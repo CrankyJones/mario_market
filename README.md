@@ -30,7 +30,16 @@ Follow the subsequent instructions to work from Git Hub:
   * $ rake db:setup
 * To create a local server and run the project: $ rails s
 * In your browser, navigate to localhost:3000
-* To run any testing: $ rspec
+* To run any testing: $ rspec   
+
+* To create an admin user run the following:   
+  User.create(   
+    username: [insert_username],   
+    email: [insert_email],   
+    password: [insert_password],   
+    admin: true   
+  )
+* Then log in using those credentials
 
 ## Git Hub link:
 

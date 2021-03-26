@@ -1,9 +1,25 @@
 require 'rails_helper'
 
 describe "the add a product process" do
+
+  before :each do
+    # admin
+    User.create(
+      username: 'adminUser',
+      email: 'admin@test.com',
+      password: '123456',
+      password_confirmation: '123456',
+      admin: true
+    )
+    visit '/users/sign_in'
+    fill_in 'email', with: 'admin@test.com'
+    fill_in 'password', with: '12345678'
+    click_on 'Log in'
+  end
+
+
   it "adds a new product" do
-    visit root_path
-    click_link 'Head to our product catalogue.'
+    visit products_path
     click_on 'Add a new product'
     fill_in 'Product Name', :with => 'spicy beans'
     fill_in 'Product Price', :with => '3.50'
@@ -21,9 +37,24 @@ describe "the add a product process" do
 end
 
 describe "the edit a product process" do
+
+  before :each do
+    # admin
+    User.create(
+      username: 'adminUser',
+      email: 'admin@test.com',
+      password: '123456',
+      password_confirmation: '123456',
+      admin: true
+    )
+    visit '/users/sign_in'
+    fill_in 'email', with: 'admin@test.com'
+    fill_in 'password', with: '12345678'
+    click_on 'Log in'
+  end
+
   it "edits a product" do
-    visit root_path
-    click_link 'Head to our product catalogue.'
+    visit products_path
     click_button 'Add a new product'
     fill_in 'Product Name', :with => 'spicy beans'
     fill_in 'Product Price', :with => '3.50'
@@ -37,8 +68,7 @@ describe "the edit a product process" do
   end
 
   it "remains on the page when a field is empty" do
-    visit root_path
-    click_link 'Head to our product catalogue.'
+    visit products_path
     click_button 'Add a new product'
     fill_in 'Product Name', :with => 'spicy beans'
     fill_in 'Product Price', :with => '3.50'
