@@ -1,25 +1,27 @@
-<h1><%= @product.name %></h1>
-<h3>From: <%= @product.country_of_origin %></h3>
-<h3>Price: $<%= @product.cost %></h3>
-
+<div class="review_title">
+  <h1><%= @product.name %></h1>
+  <h3>From: <%= @product.country_of_origin %></h3>
+  <h3>Price: $<%= @product.cost %></h3>
+</div>
 
 
 <% if @product.reviews.any? %>
-  <h4>Customer Reviews: </h4>
-  <% @product.reviews.each do |review| %>
-    <ul><h4>
-      <li>
-        <%= link_to review.title, product_review_path(@product.id, review.id) %><br>
-          Rating: <%= review.rating%> Stars
-      </li>
-    </ul></h4>
-  <% end %>
-<% else %>
-  <p>There are currently no reviews for this product. Please check back later.</p>
+  <div class="reviews_list">
+    <h4>Customer Reviews: </h4>
+    <% @product.reviews.each do |review| %>
+      <ul><h4>
+        <li>
+          <%= link_to review.title, product_review_path(@product.id, review.id) %><br>
+            Rating: <%= review.rating %> Stars
+        </li>
+      </ul></h4>
+    <% end %>
+  <% else %>
+    <p>There are currently no reviews for this product. Please check back later.</p>
+  </div>
 <% end %><br>
 
 <% if current_user&.admin %>
 <%= button_to "Edit or delete product", edit_product_path(@product.id), :method => "get", class: 'btn btn-success' %><br>
 <% end %>
 <%= button_to "Add a review for this product", new_product_review_path(@product.id), :method => "get", class: 'btn btn-primary' %><br>
-<%= button_to 'Back to our product catalogue.', products_path, :method => "get", class: 'btn btn-danger'  %><br>

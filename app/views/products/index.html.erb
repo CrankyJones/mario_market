@@ -1,6 +1,7 @@
-
-<h2>Here is a current list of products available at Mario's.</h2>
-<h3>Click on one for more details.</h3><br>
+<div class="jumbotron">
+  <h1 class="display-4">Here is a current list of products available at Mario's.</h1>
+  <p class="lead">Click on one for more details.</p>
+</div>
 
 <% if current_user&.admin %>
 <%= button_to "Add a new product", new_product_path, :method => "get", class: "btn btn-primary" %><br>

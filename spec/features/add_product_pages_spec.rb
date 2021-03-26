@@ -11,9 +11,7 @@ describe "the add a product process" do
       password_confirmation: '123456',
       admin: true
     )
-
   end
-
 
   it "adds a new product" do
     visit '/users/sign_in'
@@ -130,7 +128,7 @@ describe "the edit a product process" do
       click_on 'Spicy Beans'
       click_button 'Edit or delete product'
       click_link 'Delete Product'
-      
+
       expect(page).not_to have_content "Spicy Beans"
     end
   end

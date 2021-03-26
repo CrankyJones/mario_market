@@ -6,33 +6,31 @@
   <p>Thank you!</p>
 </div>
 
-
-
-
-
-
-
 <div class="row">
   <div class="col-md-6">
-    <h3>Newest reviews!</h3>
-    <% reviews = Review.recent_reviews %>
-    <ol>
-      <% reviews.each do |review|%>
-        <li>
-        <% product= Product.find((review.product_id).to_i) %>
-        <p><%= link_to product.name, product_path(product.id) %><br>
-        - <%= link_to review.title, product_review_path(review.product_id, review.id) %>
-        </li>
-      <% end %>
-    </ol>
+    <div class="home_column">
+      <h3>Newest reviews!</h3>
+      <% reviews = Review.recent_reviews %>
+        <ol>
+          <% reviews.each do |review|%>
+            <li>
+            <% product= Product.find((review.product_id).to_i) %>
+            <p><%= link_to product.name, product_path(product.id) %><br>
+            - <%= link_to review.title, product_review_path(review.product_id, review.id) %>
+            </li>
+          <% end %>
+        </ol>
+    </div>
   </div>
   <div class="col-md-6">
-    <h3>Most reviewed products:</h3>
-    <% products_list = Product.most_reviewed %>
-    <ol>
-    <% products_list.each do |product| %>
-      <li><p><%= link_to product.name, product_path(product.id) %></p></li>
-      <% end %>
-    </ol>
+    <div class="home_column">
+      <h3>Most reviewed products:</h3>
+      <% products_list = Product.most_reviewed %>
+      <ol>
+        <% products_list.each do |product| %>
+          <li><p><%= link_to product.name, product_path(product.id) %></p></li>
+          <% end %>
+      </ol>
+    </div>
   </div>
 </div>
