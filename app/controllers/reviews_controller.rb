@@ -5,7 +5,9 @@ class ReviewsController < ApplicationController
   end
   
   before_action only: %i[ new ] do
-    flash[:notice] = "Please sign in to leave a review."
+    if !current_user
+      flash[:notice] = "Please sign in to leave a review."
+    end
     redirect_to new_user_session_path unless current_user
   end
   
