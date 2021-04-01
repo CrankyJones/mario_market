@@ -10,10 +10,13 @@
 * Rails
 * RSPEC
 * Pry 
+* Devise
+* rails_admin
 * Capybara
 * PostgreSQL
 * Faker
-
+* SimpleCov
+* HTML/CSS
 
 ## Description
 This project uses a created database to store and link tables(shown below). A user can create new products and add reviews to those projects. Products and reviews can be edited and deleted. Clicking on a product link in a list will navigate to a page that shows all current reviews. Products can also be edited from this page. Clicking on a review navigates you to a page where you can edit or delete that review. All of the products are listed alphabetically.
@@ -32,8 +35,10 @@ Follow the subsequent instructions to work from Git Hub:
 * In your browser, navigate to localhost:3000
 * To run any testing: $ rspec   
 
-* To create an admin user run the following:   
-  User.create(   
+* To create an admin user run the following:
+  * Open the console: $ rails c   
+  * Enter the following:
+    User.create(   
     username: [insert_username],   
     email: [insert_email],   
     password: [insert_password],   
@@ -51,7 +56,7 @@ https://github.com/CrankyJones/mario_market
 
 ## Known Bugs:
 
-* 
+* There are no known bugs at this time.
 
 
 ## **License**
